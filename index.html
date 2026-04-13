@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Limited License Agreement | The Bald Dude Co.</title>
+<meta content="Limited License Agreement for Photography, video, and audio production for The Bald Dude Co." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=DM+Mono:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#f5f4f0;
+      --black:#0d0d0d;
+      --mid:#6b6b6b;
+      --light:#b8b8b0;
+      --border:#ddddd8;
+      --accent:#ff4f42;
+      --mono:'DM Mono',monospace;
+      --sans:'Open Sans',sans-serif;
+    }
+
+    html{scroll-behavior:smooth;scrollbar-gutter:stable}
+    body{
+      background:var(--bg);
+      color:var(--black);
+      font-family:var(--sans);
+      font-size:16px;
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;row-gap:.65rem;column-gap:1rem;
+      padding:1.75rem clamp(1rem,3vw,2.5rem);
+      transition:background .35s ease,backdrop-filter .35s ease,border-color .35s ease;
+    }
+    nav.scrolled{
+      background:rgba(245,244,240,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:.5px solid var(--border);
+    }
+    .nav-logo{
+      font-family:var(--mono);
+      font-size:8pt;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      text-decoration:none;
+      color:rgba(255,255,255,.82);
+      transition:color .25s ease;
+    }
+    .nav-links{
+      display:flex;flex-wrap:wrap;justify-content:flex-end;
+      gap:clamp(.35rem,.85vw,1.1rem);row-gap:.35rem;
+      list-style:none;min-width:0;
+    }
+    .nav-links a{
+      font-family:var(--mono);
+      font-size:8pt;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      text-decoration:none;
+      color:rgba(255,255,255,.45);
+      transition:color .2s ease;
+    }
+    .nav-links a:hover{color:#f5f4f0}
+    .nav-book{
+      font-family:var(--mono);
+      font-size:8pt;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      text-decoration:none;
+      color:rgba(255,255,255,.75);
+      border-bottom:1px solid rgba(255,79,66,.5);
+      padding-bottom:1px;
+      transition:color .2s ease,border-color .2s ease;
+    }
+    .nav-book:hover{color:#f5f4f0;border-color:#f5f4f0}
+    nav.scrolled .nav-logo{color:var(--black)}
+    nav.scrolled .nav-links a{color:var(--mid)}
+    nav.scrolled .nav-links a:hover{color:var(--black)}
+    nav.scrolled .nav-book{color:var(--black);border-color:var(--accent)}
+    .ham{
+      display:none;flex-direction:column;gap:5px;background:none;border:none;padding:0;
+    }
+    .ham span{display:block;width:22px;height:1px;background:rgba(255,255,255,.75);transition:background .3s}
+    nav.scrolled .ham span{background:var(--black)}
+
+    .hero{
+      min-height:88vh;
+      padding:0 clamp(1rem,3vw,2.5rem) 5rem;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      overflow:hidden;
+      background:#000;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;inset:0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.72)),
+        radial-gradient(circle at top right, rgba(255,79,66,.16), transparent 30%);
+      z-index:0;
+    }
+    .hero-grid{
+      position:relative;z-index:1;
+      display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);
+      gap:3rem;align-items:end;
+    }
+    .hero-eyebrow{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.45);
+      margin-bottom:1.5rem;
+      display:flex;align-items:center;gap:1rem;
+    }
+    .hero-eyebrow::before{
+      content:'';
+      width:24px;height:1px;background:rgba(255,255,255,.3);
+    }
+    .hero-h1{
+      font-size:clamp(2.8rem,7vw,6.6rem);
+      font-weight:300;
+      line-height:1;
+      letter-spacing:-.02em;
+      color:#f5f4f0;
+      max-width:11ch;
+    }
+    .hero-h1 em{font-style:italic;font-weight:300}
+    .hero-sub{
+      margin-top:1.8rem;
+      max-width:560px;
+      font-size:11pt;
+      font-weight:300;
+      color:rgba(255,255,255,.56);
+      line-height:1.9;
+    }
+    .hero-ctas{
+      display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.25rem;
+    }
+    .btn-a,.btn-b{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      text-decoration:none;
+      display:inline-block;
+    }
+    .btn-a{
+      color:#000;background:#f5f4f0;padding:.9rem 1.4rem;
+    }
+    .btn-b{
+      color:rgba(255,255,255,.55);
+      border-bottom:1px solid rgba(255,255,255,.25);
+      padding-bottom:.2rem;
+    }
+    .hero-meta{
+      display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;
+      padding-bottom:.4rem;
+    }
+    .hero-meta span{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.28);
+      text-align:right;
+    }
+    .scroll-line{
+      width:1px;height:48px;background:linear-gradient(to bottom, var(--accent), transparent);
+      margin-top:.5rem;align-self:flex-end;
+    }
+
+    .ticker{
+      border-top:.5px solid var(--border);
+      border-bottom:.5px solid var(--border);
+      overflow:hidden;
+      padding:.75rem 0;
+      background:var(--bg);
+    }
+    .ticker-track{
+      display:flex;gap:2.5rem;white-space:nowrap;
+      animation:ticker 24s linear infinite;
+    }
+    .ticker-item{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--mid);
+      flex-shrink:0;
+      display:flex;align-items:center;gap:1rem;
+    }
+    .t-dot{width:3px;height:3px;background:var(--accent);border-radius:50%}
+
+    .section{
+      padding:6rem clamp(1rem,3vw,2.5rem);
+    }
+
+    .agreement-shell{
+      display:grid;
+      grid-template-columns:minmax(220px,300px) minmax(0,1fr);
+      gap:3rem;
+      align-items:start;
+    }
+    .aside-card{
+      position:sticky;top:6rem;
+      border:.5px solid var(--border);
+      background:#faf9f5;
+      padding:1.5rem;
+    }
+    .aside-label,.section-label{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--mid);
+      margin-bottom:1.25rem;
+      display:flex;align-items:center;gap:1rem;
+    }
+    .aside-label::before,.section-label::before{
+      content:'';
+      width:24px;height:1px;background:var(--accent);
+    }
+    .aside-list{
+      list-style:none;display:flex;flex-direction:column;gap:.7rem;
+      padding-top:1rem;border-top:.5px solid var(--border);
+    }
+    .aside-list a{
+      text-decoration:none;
+      color:var(--mid);
+      font-family:var(--mono);
+      font-size:10pt;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .aside-list a:hover{color:var(--black)}
+    .aside-meta{
+      margin-top:1.5rem;
+      padding-top:1rem;
+      border-top:.5px solid var(--border);
+      display:flex;flex-direction:column;gap:.65rem;
+    }
+    .aside-row{
+      display:flex;justify-content:space-between;gap:1rem;
+      font-family:var(--mono);font-size:10pt;letter-spacing:.08em;
+    }
+    .aside-row .k{color:var(--light)}
+    .aside-row .v{color:var(--mid);text-align:right}
+
+    .doc-wrap{
+      display:flex;flex-direction:column;gap:1.75rem;
+    }
+    .doc-card{
+      border:.5px solid var(--border);
+      background:#fffdfa;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(13,13,13,.03);
+    }
+    .doc-top{
+      padding:1.35rem 1.5rem;
+      border-bottom:.5px solid var(--border);
+      display:flex;justify-content:space-between;gap:1rem;align-items:flex-end;flex-wrap:wrap;
+      background:linear-gradient(to right, rgba(255,79,66,.04), transparent 55%);
+    }
+    .doc-kicker{
+      font-family:var(--mono);
+      font-size:10pt;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--mid);
+      margin-bottom:.5rem;
+    }
+    .doc-title{
+      font-size:clamp(1.6rem,3vw,2.5rem);
+      font-weight:300;
+      line-height:1.12;
+      letter-spacing:-.01em;
+      color:var(--black);
+    }
+    .doc-title em{font-style:italic}
+    .doc-note{
+      font-family:var(--mono);
+      font-size:10pt;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--light);
+      white-space:nowrap;
+    }
+    .doc-body{
+      padding:1.5rem;
+      display:flex;
+      flex-direction:column;
+      gap:1.1rem;
+    }
+    .intro{
+      color:var(--mid);
+      font-size:11pt;
+      font-weight:300;
+      line-height:1.9;
+      max-width:75ch;
+    }
+    .clause{
+      border-top:.5px solid var(--border);
+      padding-top:1.25rem;
+    }
+    .clause-h{
+      display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap;
+      margin-bottom:.6rem;
+    }
+    .clause-num{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--light);
+      min-width:3rem;
+    }
+    .clause-title{
+      flex:1;
+      font-size:clamp(1.3rem,2vw,1.75rem);
+      font-weight:300;
+      letter-spacing:-.01em;
+      color:var(--black);
+    }
+    .clause-copy{
+      display:flex;flex-direction:column;gap:.9rem;
+      color:var(--mid);
+      font-size:11pt;
+      font-weight:300;
+      line-height:1.95;
+    }
+    .subclause{
+      display:grid;grid-template-columns:34px minmax(0,1fr);gap:.85rem;align-items:start;
+    }
+    .subclause-key{
+      font-family:var(--mono);
+      font-size:10pt;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--light);
+      padding-top:.15rem;
+    }
+    .subclause-copy strong{
+      color:var(--black);
+      font-weight:600;
+    }
+    .roman-list{
+      margin-top:.6rem;
+      display:flex;flex-direction:column;gap:.45rem;
+      padding-left:1rem;
+    }
+    .roman-item{
+      display:grid;grid-template-columns:26px minmax(0,1fr);gap:.5rem;
+    }
+    .roman-key{
+      font-family:var(--mono);
+      font-size:9.5pt;
+      letter-spacing:.1em;
+      color:var(--light);
+      text-transform:uppercase;
+    }
+
+    .sign-section{
+      background:#0d0d0d;
+      color:#f5f4f0;
+    }
+    .sign-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+    }
+    .sign-card{
+      border:.5px solid rgba(255,255,255,.1);
+      padding:1.5rem;
+      background:rgba(255,255,255,.02);
+      min-height:240px;
+    }
+    .sign-card h3{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#8a8a8a;
+      margin-bottom:1.5rem;
+      font-weight:400;
+    }
+    .sig-line{
+      height:64px;
+      border-bottom:.5px solid rgba(255,255,255,.2);
+      margin-bottom:1rem;
+    }
+    .sig-meta{
+      display:flex;justify-content:space-between;gap:1rem;
+      font-family:var(--mono);
+      font-size:10pt;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#6b6b6b;
+      margin-top:1rem;
+    }
+
+    .contact-band{
+      border-top:.5px solid var(--border);
+      border-bottom:.5px solid var(--border);
+      background:var(--bg);
+    }
+    .contact-inner{
+      display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;
+      padding:4rem clamp(1rem,3vw,2.5rem);
+    }
+    .contact-h{
+      font-size:clamp(2rem,3.5vw,3rem);
+      font-weight:300;
+      line-height:1.1;
+      letter-spacing:-.01em;
+      margin-bottom:1rem;
+      color:var(--black);
+    }
+    .contact-h em{font-style:italic}
+    .contact-p{
+      font-size:11pt;
+      font-weight:300;
+      color:var(--mid);
+      line-height:1.9;
+      max-width:42rem;
+    }
+    .contact-links{
+      display:flex;flex-direction:column;gap:1rem;
+    }
+    .c-link-row{
+      display:flex;gap:1.5rem;align-items:baseline;
+      padding-bottom:1rem;border-bottom:.5px solid var(--border);
+    }
+    .c-link-key{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:var(--light);
+      min-width:90px;
+      flex-shrink:0;
+    }
+    .c-link-val,.c-link-val a{
+      font-size:11pt;
+      font-weight:300;
+      color:var(--black);
+      text-decoration:none;
+    }
+
+    footer{
+      padding:2rem clamp(1rem,3vw,2.5rem);
+      display:flex;justify-content:space-between;align-items:center;gap:1rem;
+      background:var(--bg);
+    }
+    .ft-logo{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--mid);
+    }
+    .ft-copy{
+      font-family:var(--mono);
+      font-size:11pt;
+      letter-spacing:.12em;
+      color:var(--light);
+      text-align:right;
+    }
+
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    @media (max-width: 1100px){
+      nav{padding:1.25rem clamp(1rem,2.5vw,1.5rem)}
+      .nav-links,.nav-book{display:none}
+      .ham{display:flex}
+      .nav-links.nav-open{
+        display:flex!important;
+        flex-direction:column;
+        position:fixed;
+        top:65px;left:0;right:0;
+        padding:2rem clamp(1rem,4vw,2.5rem);
+        background:var(--black);
+        border-bottom:1px solid rgba(255,255,255,.1);
+        z-index:99;
+        gap:1.25rem;
+        align-items:flex-start;
+      }
+      .nav-links.nav-open a{color:rgba(245,244,240,.75)}
+      .hero-grid,.agreement-shell,.sign-grid,.contact-inner{grid-template-columns:1fr}
+      .hero-meta{align-items:flex-start}
+      .aside-card{position:relative;top:0}
+    }
+
+    @media (max-width: 700px){
+      .section,.contact-inner,.hero{padding-left:1.25rem;padding-right:1.25rem}
+      .doc-top,.doc-body,.sign-card,.aside-card{padding:1.2rem}
+      footer{flex-direction:column;text-align:center}
+      .ft-copy{text-align:center}
+      .subclause{grid-template-columns:28px minmax(0,1fr)}
+      .c-link-row{flex-direction:column;gap:.35rem}
+    }
+
+    @media print{
+      nav,.ticker,.hero-ctas,.aside-card,.contact-band,footer,.ham{display:none!important}
+      body{background:#fff}
+      .hero{min-height:auto;padding:0 0 1rem;background:#fff;color:#000}
+      .hero::before{display:none}
+      .hero-eyebrow,.hero-sub,.hero-meta span,.doc-note{color:#555!important}
+      .hero-h1{color:#000}
+      .section{padding:1rem 0}
+      .agreement-shell{grid-template-columns:1fr}
+      .doc-card{box-shadow:none;border:0}
+      .doc-top,.doc-body{padding:0}
+      .sign-section{background:#fff;color:#000}
+      .sign-card{border:1px solid #ddd;background:#fff}
+    }
+  </style>
+</head>
+<body>
+<nav id="mainNav">
+<a class="nav-logo" href="#">TBD.Co</a>
+<ul class="nav-links" id="mobileLinks">
+<li><a href="#agreement">Agreement</a></li>
+<li><a href="#sections">Sections</a></li>
+<li><a href="#signatures">Signatures</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a class="nav-book" href="javascript:window.print()">Print Agreement</a>
+<button aria-label="Menu" class="ham" onclick="toggleMobile()">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<section class="hero" id="top">
+<div class="hero-grid">
+<div class="hero-copy">
+<div class="hero-eyebrow">Limited License Agreement</div>
+<h1 class="hero-h1">Photography, <em>Video</em> + Audio Release</h1>
+<p class="hero-sub">
+          A styled HTML version of your production agreement, rebuilt to match the visual language of The Bald Dude Co.
+          and expanded to include nude and sensitive content, commercial video production, editing, audio, and distribution rights.
+        </p>
+<div class="hero-ctas">
+<a class="btn-a" href="#agreement">Read Agreement</a>
+
+</div>
+</div>
+<div class="hero-meta">
+<span>Brooklyn, NY</span>
+<span>The Bald Dude Co.</span>
+<span>Model + Production Release</span>
+<div class="scroll-line"></div>
+</div>
+</div>
+</section>
+<div class="ticker">
+<div class="ticker-track">
+<span class="ticker-item"><span class="t-dot"></span> Photography</span>
+<span class="ticker-item"><span class="t-dot"></span> Video</span>
+<span class="ticker-item"><span class="t-dot"></span> Audio</span>
+<span class="ticker-item"><span class="t-dot"></span> Commercial Rights</span>
+<span class="ticker-item"><span class="t-dot"></span> Sensitive Content</span>
+<span class="ticker-item"><span class="t-dot"></span> Distribution</span>
+<span class="ticker-item"><span class="t-dot"></span> Brooklyn</span>
+<span class="ticker-item"><span class="t-dot"></span> The Bald Dude Co.</span>
+<span class="ticker-item"><span class="t-dot"></span> Photography</span>
+<span class="ticker-item"><span class="t-dot"></span> Video</span>
+<span class="ticker-item"><span class="t-dot"></span> Audio</span>
+<span class="ticker-item"><span class="t-dot"></span> Commercial Rights</span>
+<span class="ticker-item"><span class="t-dot"></span> Sensitive Content</span>
+<span class="ticker-item"><span class="t-dot"></span> Distribution</span>
+<span class="ticker-item"><span class="t-dot"></span> Brooklyn</span>
+<span class="ticker-item"><span class="t-dot"></span> The Bald Dude Co.</span>
+</div>
+</div>
+<section class="section" id="agreement">
+<div class="agreement-shell">
+<aside class="aside-card">
+<div class="aside-label">Contents</div>
+<ul class="aside-list">
+<li><a href="#section-1">1. Grant of Rights</a></li>
+<li><a href="#section-2">2. Photographer’s Rights</a></li>
+<li><a href="#section-3">3. Restrictions</a></li>
+<li><a href="#section-4">4. Commercial Use</a></li>
+<li><a href="#section-5">5. Compensation</a></li>
+<li><a href="#section-6">6. Term and Termination</a></li>
+<li><a href="#section-7">7. Indemnification</a></li>
+<li><a href="#section-8">8. Miscellaneous</a></li>
+<li><a href="#section-9">9. Nude and Sensitive Content Release</a></li>
+<li><a href="#section-10">10. Video, Audio, and Production Rights</a></li>
+</ul>
+<div class="aside-meta">
+<div class="aside-row"><span class="k">Prepared For</span><span class="v">Justin Von Braun</span></div>
+<div class="aside-row"><span class="k">Brand</span><span class="v">The Bald Dude Co.</span></div>
+<div class="aside-row"><span class="k">Format</span><span class="v">Single-file HTML</span></div>
+<div class="aside-row"><span class="k">Output</span><span class="v">Web + Print Friendly</span></div>
+</div>
+</aside>
+<div class="doc-wrap">
+<div class="doc-card">
+<div class="doc-top">
+<div>
+<div class="doc-kicker">Agreement</div>
+<h2 class="doc-title">Limited License Agreement for Photography</h2>
+</div>
+<div class="doc-note">Updated with Sections 9 + 10</div>
+</div>
+<div class="doc-body" id="sections">
+<p class="intro">
+              This Limited License Agreement ("Agreement") is entered into on __________, by and between
+              Justin Von Braun ("Photographer") and _______________________ ("Model"), in accordance with the laws
+              and statutes of the State of New York.
+            </p>
+<article class="clause" id="section-1">
+<div class="clause-h">
+<span class="clause-num">01</span>
+<h3 class="clause-title">Grant of Rights</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy">The Photographer retains full ownership and copyright of all photographs taken during the photoshoot ("Photographs"). The Model is granted a limited, non-exclusive, non-transferable, royalty-free license to use ONLY the final edited photographs provided by the Photographer for personal, non-commercial purposes, including social media, personal websites, and portfolios.</div></div>
+<div class="subclause"><div class="subclause-key">b.</div><div class="subclause-copy">The Model shall not have access to, nor any rights to, raw or unedited photographs, except with the explicit written consent of the Photographer.</div></div>
+<div class="subclause"><div class="subclause-key">c.</div><div class="subclause-copy">The Model may not edit, alter, or modify any Photographs without prior written approval from the Photographer.</div></div>
+</div>
+</article>
+<article class="clause" id="section-2">
+<div class="clause-h">
+<span class="clause-num">02</span>
+<h3 class="clause-title">Photographer’s Rights</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy">The Photographer retains full commercial and distribution rights to all Photographs, subject to applicable laws and regulations governing intellectual property rights in the State of New York.</div></div>
+<div class="subclause"><div class="subclause-key">b.</div><div class="subclause-copy">The Photographer reserves the right to use the Photographs for advertising, marketing, portfolio display, and promotional purposes without additional permission or fees to the Model.</div></div>
+<div class="subclause"><div class="subclause-key">c.</div><div class="subclause-copy">The Photographer must be credited in any online or digital use of the Photographs as follows: "Photo by Justin Von Braun," unless otherwise agreed upon in writing.</div></div>
+</div>
+</article>
+<article class="clause" id="section-3">
+<div class="clause-h">
+<span class="clause-num">03</span>
+<h3 class="clause-title">Restrictions</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy">The Model may only share the final edited Photographs as provided by the Photographer. The Model may not share, distribute, or reproduce any raw or unedited photographs without the express written consent of the Photographer.</div></div>
+<div class="subclause"><div class="subclause-key">b.</div><div class="subclause-copy">The Model may not sell, license, sublicense, or monetize the Photographs in any manner, unless explicitly agreed upon in a separate written contract.</div></div>
+<div class="subclause"><div class="subclause-key">c.</div><div class="subclause-copy">The Model may not grant third parties permission to use the Photographs without prior written consent from the Photographer.</div></div>
+</div>
+</article>
+<article class="clause" id="section-4">
+<div class="clause-h">
+<span class="clause-num">04</span>
+<h3 class="clause-title">Commercial Use</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy">The Model does not have the right to use the Photographs for any commercial purposes, including but not limited to advertising, product endorsements, or merchandise, unless explicitly agreed upon in writing.</div></div>
+<div class="subclause"><div class="subclause-key">b.</div><div class="subclause-copy">Any unauthorized commercial use of the Photographs by the Model constitutes a breach of this Agreement and may be subject to legal remedies in accordance with New York law.</div></div>
+</div>
+</article>
+<article class="clause" id="section-5">
+<div class="clause-h">
+<span class="clause-num">05</span>
+<h3 class="clause-title">Compensation</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy">The rights granted under this Agreement are provided without additional compensation beyond the agreed-upon terms at the time of the photoshoot.</div></div>
+</div>
+</article>
+<article class="clause" id="section-6">
+<div class="clause-h">
+<span class="clause-num">06</span>
+<h3 class="clause-title">Term and Termination</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy">This Agreement is effective as of the date signed and remains in effect indefinitely unless terminated in writing by the Photographer or as required by law.</div></div>
+<div class="subclause"><div class="subclause-key">b.</div><div class="subclause-copy">Any material breach of this Agreement by the Model will result in the revocation of usage rights and may be subject to legal action in accordance with the governing laws of New York State.</div></div>
+</div>
+</article>
+<article class="clause" id="section-7">
+<div class="clause-h">
+<span class="clause-num">07</span>
+<h3 class="clause-title">Indemnification</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy">The Model agrees to indemnify and hold harmless the Photographer from any and all claims, liabilities, damages, or expenses arising from unauthorized use, distribution, or sale of the Photographs.</div></div>
+</div>
+</article>
+<article class="clause" id="section-8">
+<div class="clause-h">
+<span class="clause-num">08</span>
+<h3 class="clause-title">Miscellaneous</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy">Governing Law: This Agreement shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of laws principles.</div></div>
+<div class="subclause"><div class="subclause-key">b.</div><div class="subclause-copy">Entire Agreement: This Agreement constitutes the entire understanding between the parties and supersedes all prior agreements.</div></div>
+<div class="subclause"><div class="subclause-key">c.</div><div class="subclause-copy">Amendments: Any modifications to this Agreement must be made in writing and signed by both parties.</div></div>
+</div>
+</article>
+<article class="clause" id="section-9">
+<div class="clause-h">
+<span class="clause-num">09</span>
+<h3 class="clause-title">Nude and Sensitive Content Release</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy"><strong>Informed Consent:</strong> The Model acknowledges and agrees that the photographs and/or video recordings ("Content") produced during the photoshoot may include nude, semi-nude, implied nude, or otherwise sensitive or explicit material. The Model affirms that they are over the age of 18 and are voluntarily participating in the creation of such Content with full understanding of its nature.</div></div>
+<div class="subclause"><div class="subclause-key">b.</div><div class="subclause-copy"><strong>Irrevocable Consent to Capture and Use:</strong> The Model grants the Photographer full, irrevocable, and unrestricted rights to photograph, film, record, publish, display, distribute, and otherwise use such Content in accordance with this Agreement. The Model understands that once such Content is created and published, it may be accessible to the public.</div></div>
+<div class="subclause"><div class="subclause-key">c.</div><div class="subclause-copy"><strong>Assumption of Risk:</strong> The Model acknowledges and accepts all risks associated with the creation and distribution of nude or sensitive Content, including but not limited to reputational harm, unauthorized sharing, copying, editing, or redistribution by third parties.</div></div>
+<div class="subclause"><div class="subclause-key">d.</div><div class="subclause-copy"><strong>Third-Party Use and Misuse:</strong> The Photographer shall not be held responsible or liable for any unauthorized use, reproduction, alteration, distribution, or misuse of the Content by third parties, including but not limited to online platforms, social media users, or other individuals or entities.</div></div>
+<div class="subclause">
+<div class="subclause-key">e.</div>
+<div class="subclause-copy">
+<strong>Release of Liability:</strong> The Model hereby releases, discharges, and agrees to hold harmless the Photographer and The Bald Dude Co., including its owners, employees, contractors, and affiliates, from any and all claims, demands, damages, liabilities, or causes of action arising out of or related to:
+                    <div class="roman-list">
+<div class="roman-item"><div class="roman-key">i.</div><div>The creation, publication, or lawful use of the Content;</div></div>
+<div class="roman-item"><div class="roman-key">ii.</div><div>Any unauthorized third-party use or misuse of the Content;</div></div>
+<div class="roman-item"><div class="roman-key">iii.</div><div>Any emotional distress, reputational damage, or other consequences resulting from the existence or distribution of the Content.</div></div>
+</div>
+</div>
+</div>
+<div class="subclause"><div class="subclause-key">f.</div><div class="subclause-copy"><strong>No Obligation to Monitor or Enforce:</strong> The Photographer shall have no obligation to monitor, police, or enforce unauthorized uses of the Content by third parties.</div></div>
+<div class="subclause"><div class="subclause-key">g.</div><div class="subclause-copy"><strong>Waiver of Future Claims:</strong> The Model expressly waives any right to bring future claims against the Photographer related to the nature, use, or distribution of nude or sensitive Content created under this Agreement.</div></div>
+</div>
+</article>
+<article class="clause" id="section-10">
+<div class="clause-h">
+<span class="clause-num">10</span>
+<h3 class="clause-title">Video, Audio, and Production Rights</h3>
+</div>
+<div class="clause-copy">
+<div class="subclause"><div class="subclause-key">a.</div><div class="subclause-copy"><strong>Scope of Capture:</strong> The Model acknowledges and agrees that the Photographer may capture motion video, still images, and audio recordings (collectively, "Content") during the session. This includes spoken voice, ambient sound, behind-the-scenes footage, and any other recorded material.</div></div>
+<div class="subclause"><div class="subclause-key">b.</div><div class="subclause-copy"><strong>Audio Consent and Release:</strong> The Model expressly consents to being recorded on audio and grants the Photographer the unrestricted right to use, reproduce, edit, and distribute such audio recordings. The Model waives any rights of approval or inspection regarding the use of their voice, likeness, or statements.</div></div>
+<div class="subclause"><div class="subclause-key">c.</div><div class="subclause-copy"><strong>Editing and Creative Control:</strong> The Photographer retains full and exclusive creative control over the editing, alteration, manipulation, and final presentation of the Content. This includes but is not limited to color grading, cropping, retouching, compositing, sound design, voice editing, dubbing, synchronization with music, and narrative structuring. The Model waives any right to review or approve the final edited Content.</div></div>
+<div class="subclause"><div class="subclause-key">d.</div><div class="subclause-copy"><strong>Commercial Production and Distribution:</strong> The Photographer and The Bald Dude Co. retain full rights to use the Content for commercial purposes, including but not limited to advertising, branded content, social media campaigns, licensing, syndication, and distribution across any media now known or hereafter developed, without additional compensation to the Model unless otherwise agreed in writing.</div></div>
+<div class="subclause"><div class="subclause-key">e.</div><div class="subclause-copy"><strong>Third-Party Platforms and Media:</strong> The Model acknowledges that the Content may be distributed through third-party platforms (including but not limited to Instagram, YouTube, TikTok, websites, and broadcast or streaming services), and that such platforms may apply their own compression, modification, or redistribution practices beyond the Photographer’s control.</div></div>
+<div class="subclause"><div class="subclause-key">f.</div><div class="subclause-copy"><strong>No Obligation for Attribution or Compensation:</strong> Unless otherwise agreed in writing, the Photographer shall have no obligation to provide attribution, credit, or additional compensation to the Model for any use of the Content.</div></div>
+<div class="subclause"><div class="subclause-key">g.</div><div class="subclause-copy"><strong>Waiver of Publicity and Performance Rights:</strong> The Model waives any and all rights of publicity, performance rights, or similar claims related to the use of their likeness, voice, or performance within the Content, to the fullest extent permitted by law.</div></div>
+<div class="subclause"><div class="subclause-key">h.</div><div class="subclause-copy"><strong>Indemnification (Expanded):</strong> The Model agrees to indemnify and hold harmless the Photographer and The Bald Dude Co. from any claims arising out of the Model’s participation in recorded video or audio Content, including claims related to statements made, actions performed, or appearances captured during production.</div></div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section><section class="section" id="sign-now"><div style="text-align:center;"><h2 style="font-weight:300; margin-bottom:1rem;">Ready to Sign?</h2><a href="https://na4.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhAyDShOg4EF9mU7x2zTX8ddvJYKL2ysP0dYcc61CuRJFF3yWGY90c-JAHH_UQLFv1U*" style="display:inline-block; padding:1rem 1.5rem; background:#0d0d0d; color:#fff; text-decoration:none; font-family:DM Mono, monospace; letter-spacing:.12em; text-transform:uppercase;">Sign Agreement</a></div></section>
+
+<section class="contact-band" id="contact">
+<div class="contact-inner">
+<div>
+<div class="section-label">Contact</div>
+<h2 class="contact-h">The Bald Dude Co. <em>Agreement</em> Page</h2>
+<p class="contact-p">
+          This page is designed as a brand-aligned HTML presentation of your agreement. It uses the same core type pairing,
+          cream-and-black palette, mono utility labels, thin borders, and cinematic dark hero direction as your main site.
+        </p>
+</div>
+<div class="contact-links">
+<div class="c-link-row">
+<div class="c-link-key">Brand</div>
+<div class="c-link-val">The Bald Dude Co.</div>
+</div>
+<div class="c-link-row">
+<div class="c-link-key">Owner</div>
+<div class="c-link-val">Justin Von Braun</div>
+</div>
+<div class="c-link-row">
+<div class="c-link-key">Type</div>
+<div class="c-link-val">Photography / Video / Audio Agreement</div>
+</div>
+<div class="c-link-row">
+<div class="c-link-key">Use</div>
+<div class="c-link-val"><a href="javascript:window.print()">Print or save as PDF</a></div>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="ft-logo">The Bald Dude Co.™</div>
+<div class="ft-copy">Limited License Agreement • HTML Edition</div>
+</footer>
+<script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 24) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+
+    function toggleMobile(){
+      document.getElementById('mobileLinks').classList.toggle('nav-open');
+    }
+  </script>
+</body>
+</html>
